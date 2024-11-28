@@ -1,0 +1,542 @@
+* {
+    font-family: "Comfortaa", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+.navcontainer {
+    position: relative;
+    width: 100%;
+}
+
+/*nav//sidebar*/
+.navigation {
+    position: fixed;
+    width: 80px;
+    height: 100%;
+    background: rgb(11, 11, 97);
+    border-left: 10px solid rgb(11, 11, 97);
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.navigation.active {
+    width: 300px;
+}
+
+.navigation ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.topicon {
+    height: 40px;
+    filter: drop-shadow(0px 0px 8px rgb(255, 255, 255));
+}
+
+.navigation ul li {
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.navigation ul li:hover, .navigation ul li.hovered {
+    background-color: #ffffff;
+}
+
+.navigation ul li:nth-child(1) {
+    margin-bottom: 40px;
+}
+
+.navigation ul li a {
+    position:relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: large;
+}
+
+.navigation ul li:hover a, .navigation ul li.hovered a {
+    color: rgb(11, 11, 97);
+}
+
+.navicon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 75px;
+    text-align: center;
+    font-size: larger;
+}
+
+.titles {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 75px;
+    text-align: start;
+    white-space: nowrap;
+    font-family: "Comfortaa", serif;
+}
+
+.navigation ul li:hover a::before, .navigation ul li.hovered a::before  {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px #ffffff;
+    pointer-events: none;
+}
+
+.navigation ul li:hover a::after, .navigation ul li.hovered a::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px #ffffff;
+    pointer-events: none;
+}
+
+.navigation .logolink:hover, .navigation .logolink.hovered {
+    background-color: rgb(11, 11, 97);
+}
+
+.navigation ul .logolink:hover a::before, .navigation ul .logolink.hovered a::before  {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px transparent;
+    pointer-events: none;
+}
+
+.navigation ul .logolink:hover a::after, .navigation ul .logolink.hovered a::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px transparent;
+    pointer-events: none;
+}
+
+.main {
+    position: absolute;
+    width: calc(100% - 80px);
+    left: 80px;
+    min-height: 100vh;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.main.active {
+    width: calc(100% - 300px);
+    left: 300px;
+}
+
+.topbar {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    box-shadow: 0 0 5px 4px #353535;
+}
+
+.fa-bars {
+    position: relative;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.profile {
+    position: relative;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    border-radius: 50%;
+    background-color: rgb(11, 11, 97);
+    cursor: pointer;
+}
+
+/*drropdown*/
+.profile:hover .profsub {
+    display: block;
+    position: absolute;
+    left: -80px;
+    top: 100%;
+    background: transparent;
+    border-radius: 5px;
+}
+
+.profsub {
+    display: none;
+}
+
+.profsub .subs {
+    display: block;
+    width: max-content;
+    margin: 5px 0;
+    background-color: #00144d;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.profsub .subs .subline {
+    width: 115px;
+    padding: 5px;
+    text-align: center;
+}
+
+.subline a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+}
+
+.subline:hover {
+    background-color: #274186;
+}
+
+.toplogo {
+    height: 30px;
+    position: relative;
+}
+
+
+
+
+
+/*body content*/
+
+.bodcont {
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px 0;
+    font-family: "SUSE", sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    color: rgb(0, 0, 139);
+    text-shadow: -3px 3px 0px rgba(0, 0, 0, 0.4);
+    text-transform: uppercase;
+    margin-top: -20px;
+}
+
+.bodcont label{
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(11, 11, 97, 1);
+    box-shadow:
+        5px 5px 0px 0px rgba(150, 150, 150, 1);
+    font-style: normal;
+    font-size: 16px;
+    padding: 10px 5px;
+    width: fit-content;
+}
+
+.bodcont input {
+    height: 40px;
+    font-size: 16px;
+    padding: 5px;
+    border:1px solid rgb(108, 108, 109);
+    outline: none;
+}
+
+.bodcont input:focus {
+    border:1px solid #274186;
+    box-shadow: 0 0 5px rgb(101, 101, 255);
+}
+
+.bodcont input::-webkit-outer-spin-button,
+.bodcont input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.bodcont input[type=number]{
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.bodcont button {
+    margin: 0 8px;
+}
+
+/*main*/
+.newacc-form {
+    border-radius: 8px;
+    padding: 40px;
+    background-image: url("../images/bulsubg.png");
+    background-color: #ffffff;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-width: 5px;
+    border-style: solid;
+    border-image: linear-gradient(to bottom, 
+        rgb(0, 0, 139)0%, 
+        rgb(255, 255, 255)25%, 
+        rgb(255, 255, 255)75%, 
+        rgb(0, 0, 139)100%);
+    border-image-slice: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+h2 {
+    font-weight: bolder;
+    color: rgb(0, 0, 139);
+    margin-bottom: 20px;
+}
+
+.uid {/*UID*/
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    grid-gap: 15px;
+    margin-bottom: 15px;
+}
+
+.prof-form #inuid {
+    width: 150px;
+}
+
+.uname,
+.new-user,
+.udes,
+.new-email,
+.new-num,
+.ustat {
+    margin: 8px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    grid-gap: 15px;
+}
+
+.lbluname,
+.lblnewuser,
+.lblnewpass
+.lbludes,
+.lblnewemail,
+.lblnewcnum,
+.lblstat {
+    height: fit-content;
+}
+
+.fullname {/*user fullname*/
+    margin-left: 2%;
+    display:block;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.fullname input {
+    width: 280px;
+    margin: 2px;
+}
+
+.new-user #txtnewuser {
+    margin-right: 30px;
+}
+
+.new-user .passline {
+    display: flex;
+    align-items: center;
+}
+.new-user .passline i {
+    margin-left: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    color: rgb(0, 0, 139);
+}
+
+/*designation*/
+.des-opts {
+    position: relative;
+    font-size: 16px;
+    padding: 5px;
+    height: 40px;
+    border-radius: 8px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #6d6969;
+    outline: none;
+}
+
+.des-opts:focus {
+    border:1px solid #274186;
+    box-shadow: 0 0 5px rgb(101, 101, 255);
+}
+
+
+
+
+/*btn profile form*/
+.btnbtm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btndone, .btnx {
+	box-shadow: 3px 4px 0px 0px #899599;
+	background:linear-gradient(to bottom, #d6d6d6 5%, #bab1ba 100%);
+	background-color:#ededed;
+	border-radius:15px;
+	border:1px solid #d6bcd6;
+	display:inline-block;
+	cursor:pointer;
+	color:#3a449e;
+	font-size:17px;
+    font-weight: bold;
+	padding:7px 25px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #e1e2ed;
+    margin-top: 30px;
+    width: 120px;
+}
+
+.btndone:hover, .btnx:hover {
+	background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+	background-color:#bab1ba;
+}
+
+.btndone:active, .btnx:active {
+	position:relative;
+	top: 3px;
+}
+
+
+@media (max-width: 767px) {
+    .bodwrap {
+        display: flex;
+        align-items: flex-start; /* Align items to the top left */
+        justify-content: center;
+    }
+
+    .newacc-form {
+        border-width: 5px;
+        border-style: solid;
+        border-image: linear-gradient(to bottom, 
+            rgb(0, 0, 139)0%, 
+            rgb(255, 255, 255)0.2%, 
+            rgb(255, 255, 255)99.8%, 
+            rgb(0, 0, 139)100%);
+        border-image-slice: 1;
+        text-align: left; /* Align content to the left */
+        display: flex;
+        flex-direction: column; /* Stack form fields vertically */
+        justify-content: flex-start; 
+        align-items: flex-start; 
+    }
+
+    .newacc-form h2 {
+        text-align: center;
+    }
+
+    /* Align form fields and labels to the left */
+    .uid,
+    .uname,
+    .new-user,
+    .udes,
+    .new-email,
+    .new-num,
+    .ustat {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Align form labels and inputs to the left */
+        gap: 10px;
+        width: 100%;
+    }
+
+    #inuid,
+    #txtulname, #txtufname, #txtumname,
+    #txtnewuser, .passline,
+    .des-drop,
+    #txtnewemail,
+    #txtnewcnum,
+    .stat-drop {
+        margin-left: 5%;
+    }
+
+    #inuid { 
+        width: 100%;
+    }
+
+    /* Make the inputs full width and aligned */
+    .fullname input {
+        width: 100%; /* Make inputs take the full width */
+        margin: 5px 0; /* Add margin between inputs */
+    }
+
+    .des-opts, .stat-opts {
+        width: 100%; /* Ensure dropdowns take the full width */
+        padding: 10px;
+    }
+
+    .btnbtm {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .btndone, .btnx {
+        width: 100%;
+        max-width: 200px;
+        margin: 10px 0;
+    }
+}

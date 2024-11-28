@@ -1,0 +1,342 @@
+* {
+    font-family: "Comfortaa", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+.navcontainer {
+    position: relative;
+    width: 100%;
+}
+
+/*nav//sidebar*/
+.navigation {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: rgb(11, 11, 97);
+    border-left: 10px solid rgb(11, 11, 97);
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.navigation.active {
+    width: 80px;
+}
+
+.navigation ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.topicon {
+    height: 40px;
+    filter: drop-shadow(0px 0px 8px rgb(255, 255, 255));
+}
+
+.navigation ul li {
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.navigation ul li:hover, .navigation ul li.hovered {
+    background-color: #ffffff;
+}
+
+.navigation ul li:nth-child(1) {
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+
+.navigation ul li a {
+    position:relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: large;
+}
+
+.navigation ul li:hover a, .navigation ul li.hovered a {
+    color: rgb(11, 11, 97);
+}
+
+.navicon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 75px;
+    text-align: center;
+    font-size: larger;
+}
+
+.titles {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 75px;
+    text-align: start;
+    white-space: nowrap;
+    font-family: "Comfortaa", serif;
+}
+
+.navigation ul li:hover a::before, .navigation ul li.hovered a::before  {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px #ffffff;
+    pointer-events: none;
+}
+
+.navigation ul li:hover a::after, .navigation ul li.hovered a::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px #ffffff;
+    pointer-events: none;
+}
+
+.main {
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.main.active {
+    width: calc(100% - 80px);
+    left: 80px;
+}
+
+.topbar {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    box-shadow: 0 0 5px 4px #353535;
+}
+
+.fa-bars {
+    position: relative;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.profile {
+    position: relative;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    border-radius: 50%;
+    background-color: rgb(11, 11, 97);
+    cursor: pointer;
+}
+
+/*drropdown*/
+.profile:hover .profsub {
+    display: block;
+    position: absolute;
+    left: -80px;
+    top: 100%;
+    background: transparent;
+    border-radius: 5px;
+}
+
+.profsub {
+    display: none;
+}
+
+.profsub .subs {
+    display: block;
+    width: max-content;
+    margin: 5px 0;
+    background-color: #00144d;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.profsub .subs .subline {
+    width: 115px;
+    padding: 5px;
+    text-align: center;
+}
+
+.subline a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+}
+
+.subline:hover {
+    background-color: #274186;
+}
+
+.toplogo {
+    height: 30px;
+    position: relative;
+}
+
+
+
+/*body*/
+
+.greet {
+    margin: 20px 30px;
+}
+
+.hi {
+    font-family: "DM Serif Text", serif;
+    color: #072679;
+}
+
+.main-opts {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    padding: 40px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainwrap {
+    display: flex;          /* Ensure the container itself is a flex container */
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    text-decoration: none;
+}
+
+.card-container {
+    display: grid;                    /* Use grid layout for the cards */
+    grid-template-columns: repeat(3, 1fr); /* 2 cards per row by default */
+    gap: 40px;                         /* Space between cards */
+    padding: 0;
+    list-style: none;                  /* Removes bullet points from list */
+    width: 100%;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-container a {
+    text-decoration: none;
+}
+
+.cards {
+    position: relative;
+    height: 300px;                     /* Set the card's height */
+    border-radius: 25px;
+    background-color: #fff;
+    box-shadow: 0 0 5px 2px #494949;
+    padding: 10px 14px;
+    text-align: center;
+    display: flex;                     /* Flex to center the content inside the card */
+    justify-content: center;
+    align-items: center;
+}
+
+.cards:hover {
+    box-shadow: 0px 0px 6px 6px hsla(225, 35%, 53%, 0.5);
+    height: 320px;
+}
+
+.optname {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(135deg, rgba(106,13,131,1) 65%, rgba(168,13,71,1) 80%);
+    border-radius: 50%;
+    border: 1px solid rgb(148, 247, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 3px 5px 2px rgba(19, 49, 208, 0.75), 0px -3px 5px 2px rgba(255, 255, 255, 0.75);
+}
+
+.card-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 50%;
+    width: 100%;
+    background-color: #00144d;
+    border-radius: 25px 25px 0 25px;
+    text-decoration: none;
+}
+
+.card-overlay::before,
+.card-overlay::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -40px;
+    height: 40px;
+    width: 40px;
+    background-color: #00144d;
+}
+
+.card-overlay::after {
+    border-radius: 0 25px 0 0;
+    background-color: #fff;
+}
+
+@media screen and (max-width: 900px) {
+    .card-container {
+        grid-template-columns: repeat(3, 1fr); /* 2 cards per row on medium screens */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .card-container {
+        grid-template-columns: 1fr; /* 1 card per row on mobile screens */
+    }
+}
